@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import logout
 from api.serializers import UserSerializer
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
@@ -14,6 +14,8 @@ class RegisterView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
+        # Set email as username
+        request.data['username'] = request.data.get('email')
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
