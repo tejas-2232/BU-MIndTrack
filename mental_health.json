@@ -1,0 +1,923 @@
+[
+    {
+      "id": 1,
+      "emotions": {
+        "current": "Happy",
+        "intensity": 8
+      },
+      "activities": [
+        {"type": "Work", "duration": 6},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Socializing", "duration": 2}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "Moderate",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Had a productive day at work, feeling motivated!",
+      "triggers_coping": {
+        "trigger": "Received positive feedback from manager",
+        "coping_mechanism": "Celebrated achievements with friends"
+      },
+      "social_interactions": [
+        "Had lunch with colleagues",
+        "Went for a run with a friend"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-15T18:00:00Z",
+        "location": "Workplace",
+        "weather": "Sunny",
+        "social_context": "Positive atmosphere"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 1,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 30,
+        "gender": "Male",
+        "ethnicity": "Caucasian",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 7,
+        "satisfaction": 9
+      }
+    },
+    {
+      "id": 2,
+      "emotions": {
+        "current": "Sad",
+        "intensity": 6
+      },
+      "activities": [
+        {"type": "Studying", "duration": 4},
+        {"type": "Reading", "duration": 2},
+        {"type": "Watching TV", "duration": 1}
+      ],
+      "physical_health": {
+        "sleep_quality": "Fair",
+        "energy_levels": "Low",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling overwhelmed with assignments, need to take a break.",
+      "triggers_coping": {
+        "trigger": "Received a low grade on a test",
+        "coping_mechanism": "Took a break and went for a walk in nature"
+      },
+      "social_interactions": [
+        "Had dinner with family",
+        "Talked to a friend on the phone"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-16T20:00:00Z",
+        "location": "Home",
+        "weather": "Rainy",
+        "social_context": "Supportive environment"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.5,
+        "medication": "Antidepressants (20mg/day)"
+      },
+      "demographic_info": {
+        "age": 25,
+        "gender": "Female",
+        "ethnicity": "Asian",
+        "education": "Master's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 5,
+        "satisfaction": 6
+      }
+    },
+    {
+      "id": 3,
+      "emotions": {
+        "current": "Anxious",
+        "intensity": 7
+      },
+      "activities": [
+        {"type": "Work", "duration": 5},
+        {"type": "Socializing", "duration": 1},
+        {"type": "Relaxation", "duration": 2}
+      ],
+      "physical_health": {
+        "sleep_quality": "Poor",
+        "energy_levels": "Low",
+        "appetite": "Decreased"
+      },
+      "thoughts_feelings": "Feeling anxious about upcoming deadlines.",
+      "triggers_coping": {
+        "trigger": "Overwhelmed with workload",
+        "coping_mechanism": "Practiced deep breathing exercises"
+      },
+      "social_interactions": [
+        "Attended a team meeting",
+        "Spent time alone to relax"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-17T12:00:00Z",
+        "location": "Workplace",
+        "weather": "Cloudy",
+        "social_context": "Supportive colleagues"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.75,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 35,
+        "gender": "Female",
+        "ethnicity": "Hispanic",
+        "education": "Doctorate degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 6,
+        "satisfaction": 7
+      }
+    },
+    {
+      "id": 4,
+      "emotions": {
+        "current": "Neutral",
+        "intensity": 5
+      },
+      "activities": [
+        {"type": "Studying", "duration": 6},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Socializing", "duration": 2}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "Moderate",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling neutral, neither happy nor sad.",
+      "triggers_coping": {
+        "trigger": "Routine day with no major events",
+        "coping_mechanism": "Focused on completing tasks"
+      },
+      "social_interactions": [
+        "Had lunch with friends",
+        "Went for a walk in the park"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-18T14:00:00Z",
+        "location": "Park",
+        "weather": "Sunny",
+        "social_context": "Relaxed atmosphere"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.5,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 28,
+        "gender": "Male",
+        "ethnicity": "African American",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 6,
+        "satisfaction": 8
+      }
+    },
+    {
+      "id": 5,
+      "emotions": {
+        "current": "Stressed",
+        "intensity": 8
+      },
+      "activities": [
+        {"type": "Work", "duration": 8},
+        {"type": "Exercise", "duration": 0.5},
+        {"type": "Socializing", "duration": 1}
+      ],
+      "physical_health": {
+        "sleep_quality": "Fair",
+        "energy_levels": "Low",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling stressed due to tight deadlines at work.",
+      "triggers_coping": {
+        "trigger": "Upcoming project deadline",
+        "coping_mechanism": "Took short breaks and practiced mindfulness"
+      },
+      "social_interactions": [
+        "Had a brief chat with colleagues",
+        "Exercised alone at the gym"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-19T16:00:00Z",
+        "location": "Gym",
+        "weather": "Partly cloudy",
+        "social_context": "Focused on workout"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.25,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 33,
+        "gender": "Female",
+        "ethnicity": "Asian",
+        "education": "Master's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 4,
+        "satisfaction": 7
+      }
+    },
+    {
+      "id": 6,
+      "emotions": {
+        "current": "Content",
+        "intensity": 7
+      },
+      "activities": [
+        {"type": "Work", "duration": 7},
+        {"type": "Reading", "duration": 1},
+        {"type": "Socializing", "duration": 1}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "High",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling content after completing a major project at work.",
+      "triggers_coping": {
+        "trigger": "Successful completion of project",
+        "coping_mechanism": "Treated myself to a nice dinner"
+      },
+      "social_interactions": [
+        "Went out for dinner with colleagues",
+        "Called family members to share the news"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-20T19:00:00Z",
+        "location": "Restaurant",
+        "weather": "Clear",
+        "social_context": "Celebratory mood"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.5,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 35,
+        "gender": "Female",
+        "ethnicity": "Caucasian",
+        "education": "Doctorate degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 8,
+        "satisfaction": 9
+      }
+    },
+    {
+      "id": 7,
+      "emotions": {
+        "current": "Anxious",
+        "intensity": 6
+      },
+      "activities": [
+        {"type": "Work", "duration": 6},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Relaxation", "duration": 1}
+      ],
+      "physical_health": {
+        "sleep_quality": "Fair",
+        "energy_levels": "Low",
+        "appetite": "Decreased"
+      },
+      "thoughts_feelings": "Feeling anxious about an upcoming presentation at work.",
+      "triggers_coping": {
+        "trigger": "Upcoming presentation",
+        "coping_mechanism": "Practiced relaxation techniques"
+      },
+      "social_interactions": [
+        "Had lunch with colleagues",
+        "Spent time alone to relax"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-21T13:00:00Z",
+        "location": "Workplace",
+        "weather": "Cloudy",
+        "social_context": "Supportive colleagues"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.75,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 28,
+        "gender": "Male",
+        "ethnicity": "African American",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 6,
+        "satisfaction": 7
+      }
+    },
+    {
+      "id": 8,
+      "emotions": {
+        "current": "Happy",
+        "intensity": 9
+      },
+      "activities": [
+        {"type": "Work", "duration": 5},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Socializing", "duration": 3}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "High",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling ecstatic after receiving a promotion at work!",
+      "triggers_coping": {
+        "trigger": "Promotion announcement",
+        "coping_mechanism": "Celebrated with friends and family"
+      },
+      "social_interactions": [
+        "Organized a celebration party with colleagues",
+        "Called family members to share the news"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-22T17:00:00Z",
+        "location": "Home",
+        "weather": "Clear",
+        "social_context": "Celebratory atmosphere"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 1,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 32,
+        "gender": "Female",
+        "ethnicity": "Hispanic",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 9,
+        "satisfaction": 10
+      }
+    },
+    {
+      "id": 9,
+      "emotions": {
+        "current": "Sad",
+        "intensity": 7
+      },
+      "activities": [
+        {"type": "Work", "duration": 6},
+        {"type": "Reading", "duration": 2},
+        {"type": "Socializing", "duration": 1}
+      ],
+      "physical_health": {
+        "sleep_quality": "Fair",
+        "energy_levels": "Low",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling down after a disagreement with a friend.",
+      "triggers_coping": {
+        "trigger": "Conflict with friend",
+        "coping_mechanism": "Talked to a trusted family member"
+      },
+      "social_interactions": [
+        "Spent time with family",
+        "Called a friend to resolve the conflict"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-23T20:00:00Z",
+        "location": "Home",
+        "weather": "Cloudy",
+        "social_context": "Supportive environment"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.5,
+        "medication": "Antidepressants (20mg/day)"
+      },
+      "demographic_info": {
+        "age": 27,
+        "gender": "Male",
+        "ethnicity": "Caucasian",
+        "education": "Master's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 6,
+        "satisfaction": 7
+      }
+    },
+    {
+      "id": 10,
+      "emotions": {
+        "current": "Neutral",
+        "intensity": 6
+      },
+      "activities": [
+        {"type": "Studying", "duration": 5},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Socializing", "duration": 2}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "Moderate",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling neutral today, nothing exciting happened.",
+      "triggers_coping": {
+        "trigger": "Routine day",
+        "coping_mechanism": "Focused on completing tasks"
+      },
+      "social_interactions": [
+        "Had lunch with friends",
+        "Went for a walk in the park"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-24T14:00:00Z",
+        "location": "Park",
+        "weather": "Sunny",
+        "social_context": "Relaxed atmosphere"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.5,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 29,
+        "gender": "Female",
+        "ethnicity": "Asian",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 6,
+        "satisfaction": 8
+      }
+    },
+    {
+      "id": 11,
+      "emotions": {
+        "current": "Anxious",
+        "intensity": 8
+      },
+      "activities": [
+        {"type": "Work", "duration": 7},
+        {"type": "Exercise", "duration": 0.5},
+        {"type": "Relaxation", "duration": 0.5}
+      ],
+      "physical_health": {
+        "sleep_quality": "Poor",
+        "energy_levels": "Low",
+        "appetite": "Decreased"
+      },
+      "thoughts_feelings": "Feeling anxious about a presentation tomorrow.",
+      "triggers_coping": {
+        "trigger": "Upcoming presentation",
+        "coping_mechanism": "Reviewed presentation slides and practiced speaking"
+      },
+      "social_interactions": [
+        "Had lunch with colleagues",
+        "Spent time alone to prepare for presentation"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-25T13:00:00Z",
+        "location": "Workplace",
+        "weather": "Cloudy",
+        "social_context": "Supportive colleagues"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.75,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 30,
+        "gender": "Female",
+        "ethnicity": "Caucasian",
+        "education": "Master's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 5,
+        "satisfaction": 7
+      }
+    },
+    {
+      "id": 12,
+      "emotions": {
+        "current": "Happy",
+        "intensity": 9
+      },
+      "activities": [
+        {"type": "Work", "duration": 6},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Socializing", "duration": 3}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "High",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling joyful after a successful project presentation.",
+      "triggers_coping": {
+        "trigger": "Successful project presentation",
+        "coping_mechanism": "Celebrated with colleagues"
+      },
+      "social_interactions": [
+        "Went out for dinner with team members",
+        "Called family members to share the news"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-26T19:00:00Z",
+        "location": "Restaurant",
+        "weather": "Clear",
+        "social_context": "Celebratory atmosphere"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 1,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 35,
+        "gender": "Male",
+        "ethnicity": "Hispanic",
+        "education": "Doctorate degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 9,
+        "satisfaction": 9
+      }
+    },
+    {
+      "id": 13,
+      "emotions": {
+        "current": "Stressed",
+        "intensity": 8
+      },
+      "activities": [
+        {"type": "Work", "duration": 8},
+        {"type": "Exercise", "duration": 0.5},
+        {"type": "Socializing", "duration": 1}
+      ],
+      "physical_health": {
+        "sleep_quality": "Fair",
+        "energy_levels": "Low",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling stressed due to upcoming exams.",
+      "triggers_coping": {
+        "trigger": "Upcoming exams",
+        "coping_mechanism": "Created a study schedule and practiced relaxation techniques"
+      },
+      "social_interactions": [
+        "Had a brief chat with colleagues",
+        "Exercised alone at the gym"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-27T16:00:00Z",
+        "location": "Gym",
+        "weather": "Partly cloudy",
+        "social_context": "Focused on workout"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.25,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 29,
+        "gender": "Female",
+        "ethnicity": "Caucasian",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 4,
+        "satisfaction": 7
+      }
+    },
+    {
+      "id": 14,
+      "emotions": {
+        "current": "Content",
+        "intensity": 7
+      },
+      "activities": [
+        {"type": "Work", "duration": 7},
+        {"type": "Reading", "duration": 1},
+        {"type": "Socializing", "duration": 1}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "High",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling content after completing a major project at work.",
+      "triggers_coping": {
+        "trigger": "Successful completion of project",
+        "coping_mechanism": "Treated myself to a nice dinner"
+      },
+      "social_interactions": [
+        "Went out for dinner with colleagues",
+        "Called family members to share the news"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-02-28T18:00:00Z",
+        "location": "Restaurant",
+        "weather": "Clear",
+        "social_context": "Celebratory mood"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.5,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 35,
+        "gender": "Male",
+        "ethnicity": "Caucasian",
+        "education": "Master's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 8,
+        "satisfaction": 9
+      }
+    },
+    {
+      "id": 15,
+      "emotions": {
+        "current": "Anxious",
+        "intensity": 6
+      },
+      "activities": [
+        {"type": "Work", "duration": 6},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Relaxation", "duration": 1}
+      ],
+      "physical_health": {
+        "sleep_quality": "Fair",
+        "energy_levels": "Low",
+        "appetite": "Decreased"
+      },
+      "thoughts_feelings": "Feeling anxious about an upcoming presentation at work.",
+      "triggers_coping": {
+        "trigger": "Upcoming presentation",
+        "coping_mechanism": "Practiced relaxation techniques"
+      },
+      "social_interactions": [
+        "Had lunch with colleagues",
+        "Spent time alone to relax"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-03-01T12:00:00Z",
+        "location": "Workplace",
+        "weather": "Cloudy",
+        "social_context": "Supportive colleagues"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.75,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 30,
+        "gender": "Male",
+        "ethnicity": "African American",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 6,
+        "satisfaction": 7
+      }
+    },
+    {
+      "id": 16,
+      "emotions": {
+        "current": "Happy",
+        "intensity": 9
+      },
+      "activities": [
+        {"type": "Work", "duration": 5},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Socializing", "duration": 3}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "High",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling ecstatic after receiving a promotion at work!",
+      "triggers_coping": {
+        "trigger": "Promotion announcement",
+        "coping_mechanism": "Celebrated with friends and family"
+      },
+      "social_interactions": [
+        "Organized a celebration party with colleagues",
+        "Called family members to share the news"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-03-02T17:00:00Z",
+        "location": "Home",
+        "weather": "Clear",
+        "social_context": "Celebratory atmosphere"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 1,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 32,
+        "gender": "Female",
+        "ethnicity": "Hispanic",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 9,
+        "satisfaction": 10
+      }
+    },
+    {
+      "id": 17,
+      "emotions": {
+        "current": "Sad",
+        "intensity": 7
+      },
+      "activities": [
+        {"type": "Work", "duration": 6},
+        {"type": "Reading", "duration": 2},
+        {"type": "Socializing", "duration": 1}
+      ],
+      "physical_health": {
+        "sleep_quality": "Fair",
+        "energy_levels": "Low",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling down after a disagreement with a friend.",
+      "triggers_coping": {
+        "trigger": "Conflict with friend",
+        "coping_mechanism": "Talked to a trusted family member"
+      },
+      "social_interactions": [
+        "Spent time with family",
+        "Called a friend to resolve the conflict"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-03-03T20:00:00Z",
+        "location": "Home",
+        "weather": "Cloudy",
+        "social_context": "Supportive environment"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.5,
+        "medication": "Antidepressants (20mg/day)"
+      },
+      "demographic_info": {
+        "age": 27,
+        "gender": "Male",
+        "ethnicity": "Caucasian",
+        "education": "Master's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 6,
+        "satisfaction": 7
+      }
+    },
+    {
+      "id": 18,
+      "emotions": {
+        "current": "Neutral",
+        "intensity": 6
+      },
+      "activities": [
+        {"type": "Studying", "duration": 5},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Socializing", "duration": 2}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "Moderate",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling neutral today, nothing exciting happened.",
+      "triggers_coping": {
+        "trigger": "Routine day",
+        "coping_mechanism": "Focused on completing tasks"
+      },
+      "social_interactions": [
+        "Had lunch with friends",
+        "Went for a walk in the park"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-03-04T14:00:00Z",
+        "location": "Park",
+        "weather": "Sunny",
+        "social_context": "Relaxed atmosphere"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.5,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 29,
+        "gender": "Female",
+        "ethnicity": "Asian",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 6,
+        "satisfaction": 8
+      }
+    },
+    {
+      "id": 19,
+      "emotions": {
+        "current": "Anxious",
+        "intensity": 8
+      },
+      "activities": [
+        {"type": "Work", "duration": 7},
+        {"type": "Exercise", "duration": 0.5},
+        {"type": "Relaxation", "duration": 0.5}
+      ],
+      "physical_health": {
+        "sleep_quality": "Poor",
+        "energy_levels": "Low",
+        "appetite": "Decreased"
+      },
+      "thoughts_feelings": "Feeling anxious about a presentation tomorrow.",
+      "triggers_coping": {
+        "trigger": "Upcoming presentation",
+        "coping_mechanism": "Reviewed presentation slides and practiced speaking"
+      },
+      "social_interactions": [
+        "Had lunch with colleagues",
+        "Spent time alone to prepare for presentation"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-03-05T13:00:00Z",
+        "location": "Workplace",
+        "weather": "Cloudy",
+        "social_context": "Supportive colleagues"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 0.75,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 30,
+        "gender": "Male",
+        "ethnicity": "African American",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 5,
+        "satisfaction": 7
+      }
+    },
+    {
+      "id": 20,
+      "emotions": {
+        "current": "Happy",
+        "intensity": 9
+      },
+      "activities": [
+        {"type": "Work", "duration": 5},
+        {"type": "Exercise", "duration": 1},
+        {"type": "Socializing", "duration": 3}
+      ],
+      "physical_health": {
+        "sleep_quality": "Good",
+        "energy_levels": "High",
+        "appetite": "Normal"
+      },
+      "thoughts_feelings": "Feeling ecstatic after receiving a promotion at work!",
+      "triggers_coping": {
+        "trigger": "Promotion announcement",
+        "coping_mechanism": "Celebrated with friends and family"
+      },
+      "social_interactions": [
+        "Organized a celebration party with colleagues",
+        "Called family members to share the news"
+      ],
+      "contextual_info": {
+        "timestamp": "2023-03-06T17:00:00Z",
+        "location": "Home",
+        "weather": "Clear",
+        "social_context": "Celebratory atmosphere"
+      },
+      "treatment_medication": {
+        "therapy_session_duration": 1,
+        "medication": null
+      },
+      "demographic_info": {
+        "age": 32,
+        "gender": "Female",
+        "ethnicity": "Hispanic",
+        "education": "Bachelor's degree"
+      },
+      "feedback_ratings": {
+        "mental_health_status": 9,
+        "satisfaction": 10
+      }
+    }
+  ]
+  
