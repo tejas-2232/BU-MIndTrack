@@ -1,0 +1,30 @@
+.intro-line-container {
+    margin-top: 10%;
+}
+
+.bu-line {
+    font-size: 30px;
+}
+
+.quiz-line {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.welcome-msg-container {
+    margin-top: 5%;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: #004333;
+    color: white;
+
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 19px;
+        padding: 10px 15%;
+    }
+}
