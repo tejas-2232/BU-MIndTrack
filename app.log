@@ -1,0 +1,12 @@
+2024-02-18 11:21:27,875 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2024-02-18 11:21:37,970 - django.server - INFO - "GET / HTTP/1.1" 200 6341
+2024-02-18 11:21:38,031 - django.server - INFO - "GET /static/css/index.css HTTP/1.1" 200 0
+2024-02-18 11:21:38,042 - django.server - INFO - "GET /static/logo.png HTTP/1.1" 200 13646
+2024-02-18 11:21:38,047 - django.server - INFO - "GET /static/notification-bell.png HTTP/1.1" 200 13683
+2024-02-18 11:21:38,048 - django.server - INFO - "GET /static/dialogbox.png HTTP/1.1" 200 598047
+2024-02-18 11:21:38,064 - django.server - INFO - "GET /static/class.jpeg HTTP/1.1" 200 679642
+2024-02-18 11:21:38,092 - django.server - INFO - "GET /static/mainowl.png HTTP/1.1" 200 7618037
+2024-02-18 11:21:39,428 - django.server - INFO - "GET / HTTP/1.1" 200 6341
+2024-02-18 11:21:40,161 - django.request - WARNING - Not Found: /favicon.ico
+2024-02-18 11:21:40,161 - django.server - WARNING - "GET /favicon.ico HTTP/1.1" 404 3327
+2024-02-18 11:21:51,211 - django.server - INFO - "GET /register HTTP/1.1" 200 8989
