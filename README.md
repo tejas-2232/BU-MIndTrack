@@ -26,7 +26,7 @@ QuizWise is not just a tool; it encapsulates a user-centric philosophy that plac
   pipenv shell
   ```
 
-- update settings.py (database) add according to your database
+- update settings.py (database) add according to your database or else uncomment default sqlite db settings and comment below postgresql config.
 
 ```
   DATABASES = {
@@ -58,7 +58,7 @@ pipreqs . --force
   python manage.py makemigration
   python manage.py makemigrations QuizCreator
   python manage.py makemigrations QuizParticipant
-  python manage.py migrate
+  python manage.py migrate --run-syncdb
   ```
 - Run server:
 ```
