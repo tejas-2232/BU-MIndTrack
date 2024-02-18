@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import TypingText from '../../utils/TypingText'
 import landingBg from '../../assets/images/LandingBg.jpg'
 import './LandingPage.scss'
@@ -6,8 +7,10 @@ import '../../_helpers.scss'
 
 // const welcomeText = "Welcome to MindTrack, the Beacon of Balanced Well-Being for University Students. Step into a world where your mental health is the priority, and every aspect of your well-being is mapped with care. Here, we don't just track — we illuminate paths to resilience and vitality with innovative tools and personalized insights. Embrace the power of understanding your emotions, behaviors, and stressors, and unlock a treasure trove of resources for your self-care journey.Begin your voyage to a healthier mind today, because when you flourish, so does your potential."
 const headingText = "Tailored Mental Health Insights for University Students!"
-const LandingPage = () => {
+const LandingPage = ({ socket }) => {
+  const navigate = useNavigate()
 
+  const [userName, setUserName] = useState('')
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const updateDimensions = () => {
@@ -33,6 +36,14 @@ const LandingPage = () => {
     padding: windowWidth > 768 ? "50px 0px" : "20px",
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem('userName', userName);
+    //sends the username and socket ID to the Node.js server
+    socket.emit('newUser', { userName, socketID: socket.id });
+    navigate('/chat');
+  };
+
   return (
     <div className='main-container'>
       <div style={sectionStyle}>
@@ -40,6 +51,20 @@ const LandingPage = () => {
           <h1><TypingText text={headingText} typingSpeed={100} /></h1>
         </div>
       </div>
+      <form className="home__container" onSubmit={handleSubmit}>
+        <h2 className="home__header">Sign in to Open Chat</h2>
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          minLength={6}
+          name="username"
+          id="username"
+          className="username__input"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <button className="home__cta">SIGN IN</button>
+      </form>
     </div>
   )
 }

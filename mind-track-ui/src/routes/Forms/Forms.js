@@ -103,6 +103,45 @@ const Forms = () => {
     );
   };
 
+  const payload = [{
+    "emotions": {
+      "current": selectedEmotionValue,
+      "intensity": selectedMoodIntensityValue
+    },
+    "activities": [
+      { "type": selectedActivity, "duration": selectedActivityDuration }
+    ],
+    "physical_health": {
+      "sleep_quality": selectedSleepQuality,
+      "energy_levels": selectedEnergyLevels,
+      "appetite": selectedAppetite
+    },
+    "thoughts_feelings": feelings,
+    "triggers_coping": {
+      "trigger": triggers,
+      "coping_mechanism": copingMechanism
+    },
+    "social_interactions": [
+      socialInteractions
+    ],
+    "contextual_info": {
+      "timestamp": new Date().toISOString(),
+      "location": selectedLocation,
+      "weather": selectedWeather,
+      "social_context": socialContext
+    },
+    "treatment_medication": {
+      "therapy_session_duration": therapyDuration,
+      "medication": medications || null
+    },
+    "demographic_info": {
+      "age": age,
+      "gender": gender,
+      "ethnicity": ethnicity,
+      "education": educationLevel
+    }
+  }]
+
   return (
     <div className='forms-main-container'>
       <div className='mb10'> Select your mood:</div>
@@ -238,7 +277,7 @@ const Forms = () => {
         handleOnChange={(selectedOption) => setEducationLevel(selectedOption.value)}
         filterBy="label"
       />
-      <Button className='button button-primary text-center mt20 mb20' handleOnClick={()=>{}}>Submit</Button>
+      <Button className='button button-primary text-center mt20 mb20' handleOnClick={() => { console.log('payload', payload) }}>Submit</Button>
     </div>
   )
 }
