@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-bf%09b4rj3w_-b)##(76q+*&!$b)$fnubqpyw*zko*4jz2m#2u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0"]
+ALLOWED_HOSTS = ["0.0.0.0","localhost"]
 
 
 # Application definition
@@ -48,6 +48,8 @@ INSTALLED_APPS = [
 ]
 
 ASGI_APPLICATION = 'MindTrackApi.asgi.application'
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
