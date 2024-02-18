@@ -105,17 +105,18 @@ WSGI_APPLICATION = "MindTrackApi.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "MindTrack",
-        "USER": "postgres",
-        "PASSWORD":"PostgreSQLService@24/7", 
-        "HOST":"localhost",
-        "PORT":"5432",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
-    #{
-    #     "ENGINE": "django.db.backends.sqlite3",
-    #     "NAME": BASE_DIR / "db.sqlite3",
+    # {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": "MindTrack",
+    #     "USER": "postgres",
+    #     "PASSWORD":"PostgreSQLService@24/7", 
+    #     "HOST":"localhost",
+    #     "PORT":"5432",
     # }
+    
 }
 
 
