@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreView Quiz</title>
+    {% load static %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .headerbuttons {
+            display: none;
+        }
+
+        .registerbutton {
+            display: none;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        textarea {
+            width: 96%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            height: 100px;
+        }
+
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .field-container {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .field-container.visible {
+            display: block;
+        }
+
+        .field-container label {
+            margin-bottom: 5px;
+        }
+
+        .field-container input {
+            margin-bottom: 10px;
+        }
+
+        #dynamic-fields {
+            display: grid;
+        }
+
+        .note {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .note p {
+            margin: 0;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .larger-checkbox {
+            transform: scale(1.5);
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .category-filter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .category-filter label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .category-filter select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        .category-filter button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #663399;
+            color: white;
+            cursor: pointer;
+        }
+
+        .category-filter button:hover {
+            background-color: #E6549C;
+        }
+
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #663399;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #E6549C;
+        }
+
+        button {
+            text-align: center;
+            margin-top: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 20%;
+        }
+
+        .container h2 {
+            text-align: center;
+        }
+
+
+        #questions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #questions-table th,
+        #questions-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .footer-content {
+            background: linear-gradient(to right, #1DA3B8, #77AB59);
+            font-size: small;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .checked {
+            color: #007bff;
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 60%;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-top: 70px;
+            margin-bottom: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mainsection {
+            height: 70vh;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        {% include 'header.html' %}
+    </div>
+
+    <div>
+        {% include 'QuizCreator/navbar.html' %}
+    </div>
+
+    <div class="mainsection">
+        <div class="main-content">
+            <div class="content-container">
+                <h1 style="margin-top: 30px;">Preview Quiz</h1>
+                <div class="message">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="container" style="margin-top: 2%; text-align: center;">
+                    <form method="post" target="_blank">
+                        {% csrf_token %}
+                        <div class="quiz-select" style="margin-top: 3%;">
+                            <label for="select-quiz">Select Quiz:</label>
+                            <select id="select-quiz" name="select-quiz" required style="width: 50%;">
+                                {% if not selected_quiz_id %}
+                                <option value="" disabled selected>--- Please select a Quiz ---</option>
+                                {% endif %}
+                                {% for quiz in quizzes %}
+                                <option value="{{ quiz.id }}" {% if quiz.id == selected_quiz_id %}selected{% endif %}>{{ quiz.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="submitbutton">Select</button>
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        {% include 'footer.html' %}
+    </div>
+</body>
+
+
+</html>

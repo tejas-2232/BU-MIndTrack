@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Question Category</title>
+    {% load static %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .main-content {
+            background-color: white;
+            background-size: cover;
+            background-position: center;
+            justify-content: center;
+            color: black;
+            padding: 20px;
+        }
+
+        .headerbuttons {
+            display: none;
+        }
+
+        .registerbutton {
+            display: none;
+        }
+
+        .form-container {
+            margin: 50px auto;
+            width: 60%;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-top: 15px;
+            margin-bottom: 14px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-top: -5px;
+            margin-bottom: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+
+        .larger-checkbox {
+            transform: scale(1.5);
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #663399;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #E6549C;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .addcategorybutton {
+            text-align: center;
+            margin-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .addcategorybutton button {
+            width: 25%;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .mainsection {
+            height: 70vh;
+            overflow-x: auto;
+        }
+
+        .footer-content {
+            background: linear-gradient(to right, #1DA3B8, #77AB59);
+            font-size: small;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        {% include 'header.html' %}
+    </div>
+
+    <div>
+        {% include 'QuizCreator/navbar.html' %}
+    </div>
+
+    <div class="mainsection">
+        <div class="main-content">
+            <div class="content-container">
+                <h1 style="text-align: center; margin-bottom: 30px; margin-top: 20px;">Create Question Category</h1>
+                <div class="form-container">
+                    <form method="post">
+                        {% csrf_token %}
+                        <label for="category_name">Category Name:</label>
+                        <input type="text" id="category_name" name="category_name" required>
+
+                        <label for="category_description">Category Description:</label>
+                        <textarea id="category_description" name="category_description" required></textarea>
+
+                        <div class="categoryvisibility">
+                            <label for="visible_to_others">Visible to Others:</label>
+                            <input type="checkbox" class="larger-checkbox" id="visible_to_others" name="visible_to_others">
+                        </div>
+
+                        <div class="message">
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert 
+                                        {% if message.tags == 'success' %}
+                                            alert-success
+                                        {% elif message.tags == 'error' %}
+                                            alert-danger
+                                        {% endif %}
+                                    ">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+
+                        <div class="addcategorybutton">
+                            <button type="submit">Add Category</button>
+                            <button type="reset">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        {% include 'footer.html' %}
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        function hideMessage() {
+            document.querySelectorAll('.alert').forEach(function (alert) {
+                alert.style.display = 'none';
+            });
+        }
+
+        function showMessageForDuration(messageElement) {
+            messageElement.style.display = 'block';
+            setTimeout(function () {
+                messageElement.style.display = 'none';
+            }, 3000); // Hide the message after 5 seconds
+        }
+
+        document.querySelectorAll('.dynamic-fields label').forEach(function (label) {
+            addDeleteButton(label);
+        });
+
+        // Show messages for a duration when the page loads
+        document.querySelectorAll('.alert').forEach(function (messageElement) {
+            showMessageForDuration(messageElement);
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .headerbuttons {
+            display: none;
+        }
+
+        .registerbutton {
+            display: none;
+        }
+
+        .card-container {
+            display: flex;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            justify-content: space-evenly;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .card-content {
+            padding: 20px;
+            height: 350px;
+            overflow-y: auto;
+            background: #f4f4f4
+        }
+
+        .card-footer {
+            background-color: #663399;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .quiz-details {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer-content {
+            background: linear-gradient(to right, #1DA3B8, #77AB59);
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            /* Align items vertically in the center */
+            justify-content: space-evenly;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .fancy-note {
+            font-style: italic;
+            color: #555;
+            margin-left: 20px;
+            /* Adjust as needed for spacing */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- Include the header -->
+        {% include 'header.html' %}
+    </div>
+
+    <div>
+        <!-- Include the navigation bar -->
+        {% include 'QuizCreator/navbar.html' %}
+    </div>
+
+    <div class="card-container">
+        <div class="card" style="width: 200%;">
+            <div class="card-header">Examiner Profile</div>
+            <div class="card-content">
+                <div class="profile-container">
+                    <img class="profile-pic" src="{% static 'profilepic.jpg' %}" alt="Profile Picture">
+                    <p class="fancy-note">"Education is the most powerful weapon which you can use to change the world."</p>
+                    <p class="fancy-note">- Nelson Mandela</p>
+                </div>
+                <p><strong>First Name:</strong> {{ first_name }} </p>
+                <p><strong>Last Name:</strong> {{ last_name }}</p>
+                <p><strong>Email:</strong> {{ email }} </p>
+                <p><strong>Contact:</strong> {{ contact }} </p>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'examiner_profile' %}">
+                    <img src="{% static 'redirect.png' %}" alt="Your Image" style="width: 5%;">
+                </a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 200%;">
+            <div class="card-header">Recent Quiz Metrics</div>
+            <div class="card-content">
+                {% if recent_quiz_metrics %}
+                <p><strong>Name:</strong> {{ recent_quiz_metrics.quiz_name }}</p>
+                <p><strong>Duration:</strong> {{ recent_quiz_metrics.duration }}</p>
+                <p><strong>Total Questions:</strong> {{ recent_quiz_metrics.total_questions }}</p>
+                <p><strong>Top Score:</strong>{{ recent_quiz_metrics.max }}</p>
+                <p><strong>Lowest Score:</strong> {{ recent_quiz_metrics.min }}</p>
+                <p><strong>Mean:</strong> {{ recent_quiz_metrics.mean }}</p>
+                <p><strong>Median:</strong> {{ recent_quiz_metrics.median }}</p>
+                <p><strong>Mode:</strong> {{ recent_quiz_metrics.mode }}</p>
+                {% else %}
+                No Recent Quiz Submissions
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'examinee_scores' %}">
+                    <img src="{% static 'redirect.png' %}" alt="Your Image" style="width: 5%;">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-content">
+        {% include 'footer.html' %}
+    </div>
+</body>
+
+</html>

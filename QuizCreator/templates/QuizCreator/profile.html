@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .headerbuttons {
+            display: none;
+        }
+
+        .registerbutton {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mainsection {
+            height: 80vh;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .form-container {
+            width: 60%;
+            margin: 0 auto;
+            background-color: #f4f4f4;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .form-container h1 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            flex: 1;
+            margin-right: -120px;
+            margin-left: -100px;
+        }
+
+
+        .form-group input {
+            flex: 2;
+            margin: 0;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin-right: 40px;
+        }
+
+        .form-group ul {
+            flex: 2;
+            margin: 0;
+            padding: 5px;
+            margin-right: 40px;
+        }
+
+        .form-group ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .form-group ul li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group ul li input {
+            flex: 1;
+        }
+
+        .delete-course-button {
+            background-color: #663399;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .delete-course-button:hover {
+            background-color: #bb2d3b;
+        }
+
+        .add-course-button,
+        .delete-course-button {
+            align-self: flex-start;
+        }
+
+        .form-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #663399;
+            color: white;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .form-container button:hover {
+            background-color: #E6549C;
+        }
+
+        .footer-content {
+            background: linear-gradient(to right, #1DA3B8, #77AB59);
+            font-size: small;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        {% include 'header.html' %}
+    </div>
+
+    <div>
+        {% include 'QuizCreator/navbar.html' %}
+    </div>
+
+    <div class="mainsection">
+        <div class="main-content">
+            <div class="content-container">
+                <div class="message">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="form-container">
+                    <form method="post" onsubmit="return validateForm()">
+                        {% csrf_token %}
+                        <h1>Examiner Profile</h1>
+                        <br>
+                        <div class="form-group">
+                            <label for="first_name">First Name:</label>
+                            <input type="text" id="first_name" name="first_name" value="{{ first_name }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" id="last_name" name="last_name" value="{{ last_name }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" value="{{ email }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">Contact:</label>
+                            <input type="text" id="contact" name="contact" value="{{ contact }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email_notification">Email Notifications:</label>
+                            <input type="checkbox" id="email_notification" name="email_notification" {% if email_notification %}checked{% endif %}>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile_notification">Mobile Notifications:</label>
+                            <input type="checkbox" id="mobile_notification" name="mobile_notification" {% if mobile_notification %}checked{% endif %}>
+                        </div>
+                
+                        <button type="submit">Update</button>
+                        <button type="reset" class="reset">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        {% include 'footer.html'%}
+    </div>
+
+    <script>
+        function addCourse() {
+            const courseList = document.getElementById('course-list');
+            const newCourseInput = document.createElement('li');
+            newCourseInput.innerHTML = `
+                <input type="text" value="">
+                <button class="delete-course-button" onclick="deleteCourse(this)">Delete</button>
+            `;
+            courseList.appendChild(newCourseInput);
+        }
+
+        function deleteCourse(button) {
+            const courseItem = button.parentElement;
+            courseItem.remove();
+        }
+
+        function updateProfile() {
+            alert('Profile updated!');
+        }
+    </script>
+    <script>
+        function validateForm() {
+            const firstName = document.getElementById('first_name').value;
+            const lastName = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;
+            const contact = document.getElementById('contact').value;
+    
+            let isValid = true;
+    
+    
+            if (firstName === '' || firstName.trim() === '') {
+                alert('First Name is required and should not contain only spaces')
+                isValid = false;
+            }
+    
+            if (lastName === '' || lastName.trim() === '') {
+                alert('Last Name is required and should not contain only spaces')
+                isValid = false;
+            }
+    
+            if (email === '') {
+                alert('Email is required')
+                isValid = false;
+            } else {
+                // Basic email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Invalid email format')
+                    isValid = false;
+                }
+            }
+    
+            if (contact === '') {
+                alert('Contact is required')
+                isValid = false;
+            } else {
+                // Validate contact to be 10 digits
+                const contactRegex = /^\d{10}$/;
+                if (!contactRegex.test(contact)) {
+                    alert('Contact should be 10 digits')
+                    isValid = false;
+                }
+            }
+    
+            return isValid;
+        }
+    </script>
+
+</body>
+
+</html>
