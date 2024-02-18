@@ -1,0 +1,40 @@
+// .home-container {
+//     padding: 10px 30px;
+// }
+
+.modal {
+    width: 40%;
+    height: 30%;
+}
+
+.input-label {
+    label {
+        color: #004333;
+    }
+}
+
+.lower-tab {
+    cursor: pointer;
+    padding: 10px 0px;
+    background-color: #004333;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+    h3 {
+        margin: 0;
+    }
+}
+
+.lower-tab-item {
+    display: flex;
+    align-items: center;
+    img {
+        width: 40px;
+        margin-right: 10px;
+        filter: invert(1);
+    }
+    div {
+        margin-right: 20px;
+    }
+}

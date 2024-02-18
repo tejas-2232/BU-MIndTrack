@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './routes/Home'
-import CategoryDetails from './routes/CategoryDetails'
-import AddQuestions from './routes/AddQuestions'
-import StudentQuiz from './routes/StudentQuiz'
+import Forms from './routes/Forms'
+// import AddQuestions from './routes/AddQuestions'
+// import StudentQuiz from './routes/StudentQuiz'
 import { getFromLocalStorage } from './utils/localStorage'
 
 const AuthorizedRoute = () => { 
@@ -11,6 +11,7 @@ const AuthorizedRoute = () => {
     <main className='main-container'>
       <Routes>
         <Route path='home/*' element={<Home />}></Route>
+        <Route path='forms/*' element={<Forms />}></Route>
         {/* <Route path='category-details/*' element={<CategoryDetails />}></Route>
         <Route path='add-questions/*' element={<AddQuestions />}></Route>
         <Route path='student-quiz/*' element={<StudentQuiz />}></Route>

@@ -1,4 +1,48 @@
+:root {
+  //button
+  --btn-primary-bg: #004333;
+  --btn-primary-border: #004333;
+  --btn-secondary-border: #33695c;
+  --btn-secondary-bg: #33695c;
+  --btn-link-text: #004333;
+  --btn-ghost-primary-text: #004333;
+  --btn-ghost-primary-border: #004333;
+  --btn-ghost-secondary-border: #004333;
+  --btn-ghost-secondary-bg: #004333;
+
+  //checkbox
+  --checkbox-primary: #004333;
+  --checkbox-primary-tick: #004333;
+  --checkbox-secondary: #33695c;
+
+  //dropdown
+  --dropdown-primary: #004333;
+
+  //header
+  --header-background: #004333;
+  --header-link-color: white;
+  --header-badge-background: #4bd800;
+  --header-badge-color: #004333;
+
+  //input
+  --input-label-color: #004333;
+  --input-outline-color: #004333;
+
+  //loader
+  --loader-primary: #004333;
+
+  //Modal
+  --modal-primary: #004333;
+
+  //radio
+  --radio-secondary: #33695c;
+  --radio-tabs-checked-text: #004333;
+  --radio-tabs-checked-border: #33695c;
+  --radio-tabs-focus-border: #004333;
+}
+
 body {
+  color: #004333;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

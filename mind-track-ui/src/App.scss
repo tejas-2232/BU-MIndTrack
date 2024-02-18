@@ -29,7 +29,12 @@
 }
 
 .main-container {
-  min-height: 80vh;
+
+  height: 80vh;
+  overflow: scroll;
+  .landing-img {
+    position: absolute;
+  }
 }
 
 .header-icon-container {
@@ -38,9 +43,10 @@
   }
 }
 
-.header-title{
+.header-title {
   align-items: center;
 }
+
 .header-side-title {
   display: inherit;
   border-left: 1px solid #fff;
@@ -53,6 +59,8 @@
 }
 
 .footer-container {
+  position: fixed;
+  width: 100%;
   background-color: #004333;
   color: white;
   height: 12vh;

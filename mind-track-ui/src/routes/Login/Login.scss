@@ -1,0 +1,27 @@
+.login-page-container {
+    min-height: 80vh;
+}
+
+.login-img-section {
+    img {
+        max-height: 80vh;
+    }
+}
+
+.login-creds-section {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    border-radius: 20px;
+    padding: 2% 5% 2% 1%;
+    backdrop-filter: blur(30px);
+    width: 18%;
+}
+
+.new-user-span {
+    color: #004333;
+
+    a {
+        color: #004333;
+    }
+}

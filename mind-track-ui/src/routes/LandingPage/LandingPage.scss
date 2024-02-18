@@ -1,5 +1,5 @@
 .intro-line-container {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .bu-line {
@@ -12,12 +12,13 @@
 }
 
 .welcome-msg-container {
-    margin-top: 5%;
+    width: 100%;
+    // margin-top: 5%;
     align-items: center;
     text-align: center;
     padding: 20px;
-    background: #004333;
-    color: white;
+    // background: #004333;
+    color: #004333;
 
     h2 {
         font-size: 30px;
@@ -28,3 +29,26 @@
         padding: 10px 15%;
     }
 }
+
+// .backgroundImage {
+//     width: 100%;
+//     height: 100vh;
+//     background-image: url('BU-MindTrack/mind-track-ui/src/assets/images/home.svg'); /* Adjust the path as needed */
+//     background-size: cover;
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//   }
+  
+//   /* Adjustments for tablets */
+//   @media (max-width: 768px) {
+//     .backgroundImage {
+//       height: 100vh; /* You can adjust this based on your design needs */
+//     }
+//   }
+  
+//   /* Adjustments for mobile devices */
+//   @media (max-width: 480px) {
+//     .backgroundImage {
+//       height: 100vh; /* Adjust height or use min-height for better flexibility */
+//     }
+//   }

@@ -81,7 +81,7 @@ const Layout = () => {
           <div className='d-flex header-title'>
             <img src={fullLogo} style={{ height: '30px' }} alt='brand logo' className='logo-filter' />
             <div className='header-side-title'>
-              <span>Quiz Application</span>
+              <span>MindTrack</span>
             </div>
           </div>
         }
@@ -91,7 +91,7 @@ const Layout = () => {
       >
       </Header>)}
       <Outlet className='outlet-container' />
-      <Footer isSticky className={{ footerContainer: 'footer-container' }}>
+      <Footer className={{ footerContainer: 'footer-container' }}>
         <div className='footer-title'>
           <p>Powered By</p>
           <img src={logo} alt='footer' />
