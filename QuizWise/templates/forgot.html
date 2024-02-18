@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Wise Registration</title>
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1DA3B8, #77AB59);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin-top: -10px;
+        }
+
+        .loggeduser {
+            display: none;
+        }
+
+        .registerbutton {
+            display: none;
+        }
+
+
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 75vh;
+            width: 200%;
+            margin-top: -20px;
+        }
+
+        .content-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .content-container form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .content-container input {
+            height: 40px;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 100%;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .content-container button {
+            margin-top: 20px;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            background-color: #663399;
+            color: white;
+            font-size: 16px;
+        }
+
+        .content-container button:hover {
+            background-color: #E6549C;
+        }
+
+        .header {
+            width: 100%;
+            display: grid;
+        }
+
+        footer {
+            font-size: small;
+            text-align: center;
+            color: white;
+            margin-top: -30px;
+            margin-bottom: 50px;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .loginlabel {
+            font-size: xx-large;
+            font-weight: 600;
+            border: 3px solid white;
+            border-radius: 10px;
+            padding: 8px;
+            margin-top: -50px;
+        }
+
+        footer {
+            background: linear-gradient(to right, #1DA3B8, #77AB59);
+            font-size: small;
+            text-align: center;
+            color: white;
+            margin-top: -25px;
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+    
+    <p class="loginlabel">Reset Your Credentials</p>
+    
+    <div class="main-content">
+        <div class="content-container">
+            <form method="post" action="forgot">
+                {% csrf_token %}
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="first_name" required>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <div class="message">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                <button type="submit">Send Credentials</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        {% include 'footer.html'%}
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        function hideMessage() {
+            document.querySelectorAll('.alert').forEach(function (alert) {
+                alert.style.display = 'none';
+            });
+        }
+
+        function showMessageForDuration(messageElement) {
+            messageElement.style.display = 'block';
+            setTimeout(function () {
+                messageElement.style.display = 'none';
+            }, 3000);
+        }
+
+        document.querySelectorAll('.dynamic-fields label').forEach(function (label) {
+            addDeleteButton(label);
+        });
+
+        document.querySelectorAll('.alert').forEach(function (messageElement) {
+            showMessageForDuration(messageElement);
+        });
+    });
+</script>
+
+</html>

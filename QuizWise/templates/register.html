@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizWise Registration</title>
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1DA3B8, #77AB59);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin-top: -10px;
+        }
+
+        .loggeduser {
+            display: none;
+        }
+
+        .loginlinkbutton {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            background-color: #673AB7;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            width: 100%;
+            position: relative;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+            margin-left: 20px;
+            height: 150%;
+        }
+
+        .content-container form {
+            width: 100%;
+        }
+
+        .content-container p {
+            align-self: center;
+            display: grid;
+        }
+
+        .content-container input,
+        select {
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 100%;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .content-container button {
+            margin-top: 20px;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            background-color: #663399;
+            color: white;
+            font-size: 16px;
+        }
+
+        .content-container button:hover {
+            background-color: #E6549C;
+        }
+
+        footer {
+            padding: 30px;
+            font-size: small;
+            text-align: center;
+            color: white;
+        }
+
+        .helptext {
+            color: red;
+        }
+
+        .headerbuttons {
+            display: none;
+        }
+
+        .registerbutton {
+            display: none;
+        }
+
+        .header {
+            width: 100%;
+            display: grid;
+        }
+
+        .registerlabel {
+            font-size: xx-large;
+            font-weight: 600;
+            border: 3px solid white;
+            border-radius: 10px;
+            padding: 8px;
+            margin-top: -60px;
+        }
+
+        form {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        {% include 'header.html' %}
+    </div>
+    <p class="registerlabel">Register Now</p>
+    <br>
+    <div class="main-content">
+        <div class="content-container">
+            <form method="post">
+
+                <br>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p>
+                    <button type="submit">Register</button>
+                </p>
+                <br>
+                <p style="text-align: center;">
+                    <a class="loginlink" href="/login" style="font-weight: bold;">Already have an account? Click here to
+                        Log In</a>
+                    <br>
+                </p>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        {% include 'footer.html'%}
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        function hideMessage() {
+            document.querySelectorAll('.alert').forEach(function (alert) {
+                alert.style.display = 'none';
+            });
+        }
+
+        function showMessageForDuration(messageElement) {
+            messageElement.style.display = 'block';
+            setTimeout(function () {
+                messageElement.style.display = 'none';
+            }, 3000);
+        }
+
+        document.querySelectorAll('.dynamic-fields label').forEach(function (label) {
+            addDeleteButton(label);
+        });
+
+        document.querySelectorAll('.alert').forEach(function (messageElement) {
+            showMessageForDuration(messageElement);
+        });
+    });
+</script>
+
+</html>

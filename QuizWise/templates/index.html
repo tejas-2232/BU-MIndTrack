@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    {% load static %}
+    <style>
+        body {
+            margin: 0;
+            height: max-content;
+            padding: 0;
+            background: linear-gradient(to right, #1DA3B8, #77AB59);
+            font-family: Arial, sans-serif;
+            color: white;
+            background-image: url('{% static "class.jpeg" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .loggeduser {
+            display: none;
+        }
+
+        .registerbutton {
+            display: none;
+        }
+
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 63vh;
+        }
+
+        .content-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-container img {
+            width: 500px;
+            margin-left: -140px;
+            margin-right: 100px;
+        }
+
+        .dialogbox img {
+            width: 300px;
+            margin-left: 10px;
+            margin-right: 0px;
+            margin-top: -300px;
+        }
+
+        .middle-content form {
+            display: flex;
+            max-width: 300px;
+            min-width: fit-content;
+        }
+
+        .middle-content input {
+            flex: 1;
+            width: 500px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .middle-content button {
+            width: 100px;
+            color: aliceblue;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: 1px solid #663399;
+            padding: 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+            background-color: #663399;
+            transition: background-color 0.3s;
+            margin-left: -30px;
+            font-weight: bold;
+        }
+
+        .content-container button:hover {
+            background-color: #E6549C;
+            border: #E6549C
+        }
+
+        .middle-content {
+            margin-left: 100px;
+            height: 300px;
+            color: black;
+            text-shadow: #ccc;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 25px;
+        }
+
+        .middle-content h2 {
+            font-size: 7vb;
+        }
+
+        .middle-content h4 {
+            font-size: 3vb;
+            color: white;
+        }
+
+        footer {
+            padding: 30px;
+            font-size: small;
+            text-align: center;
+            background: linear-gradient(to right, #1DA3B8, #77AB59);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        {% include 'header.html' %}
+    </div>
+
+
+    <div class="main-content">
+        <div class="content-container">
+            <div class="middle-content">
+                <h2>Online Quiz Builder</h2>
+                <h4>QuizWise - Building Online Exams and Tests Made Fun, Easy, and Engaging!</h4>
+                <form method="get" action="{% url 'register' %}">
+                    <input type="text" placeholder="Your email address" name="email">
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+            <div class="dialogbox">
+                <img src="{% static 'dialogbox.png' %}" alt="Your Image">
+            </div>
+            <img src="{% static 'mainowl.png' %}" alt="Your Image">
+        </div>
+    </div>
+
+    <div class="footer-content">
+        {% include 'footer.html'%}
+    </div>
+</body>
+
+</html>
